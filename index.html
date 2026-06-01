@@ -85,7 +85,7 @@
 
   .hero h1 {
     font-family: 'Inter', sans-serif; font-weight: 800;
-    font-size: clamp(2rem, 3.8vw, 3rem);
+    font-size: clamp(3.2rem, 7vw, 5.5rem);
     line-height: 1.15; letter-spacing: -0.5px; margin-bottom: 20px;
   }
   .hero h1 em { font-style: normal; color: var(--red); }
@@ -193,7 +193,7 @@
   }
   .section-title {
     font-family: 'Inter', sans-serif; font-weight: 800;
-    font-size: clamp(1.5rem, 2.4vw, 2.1rem); line-height: 1.2; margin-bottom: 14px; letter-spacing: -0.3px;
+    font-size: clamp(2.6rem, 5vw, 4rem); line-height: 1.15; margin-bottom: 14px; letter-spacing: -0.3px;
   }
   .section-sub { color: var(--gray); font-size: 1.05rem; line-height: 1.7; max-width: 540px; }
 
@@ -364,7 +364,7 @@
     bottom: -150px; right: -80px;
   }
   .cta-section h2 {
-    font-family: 'Inter', sans-serif; font-size: clamp(1.5rem, 2.8vw, 2.2rem); font-weight: 800;
+    font-family: 'Inter', sans-serif; font-size: clamp(2.6rem, 5vw, 4rem); font-weight: 800;
     margin-bottom: 16px; position: relative; z-index: 1;
   }
   .cta-section p { font-size: 1.1rem; opacity: .85; margin-bottom: 40px; position: relative; z-index: 1; }
@@ -418,6 +418,8 @@
     .phone-wrap { width: 220px; }
     .phone-frame { width: 220px; }
     .badge-float { display: none; }
+    .offline-grid { grid-template-columns: 1fr !important; }
+    #offline { padding: 70px 24px !important; }
   }
 
   /* ── SCROLL REVEAL ── */
@@ -439,7 +441,7 @@
     <a href="#cuisines">Cuisines</a>
     <a href="#pricing">Pricing</a>
   </div>
-  <a href="https://github.com/najatbouba8-tech/MealOptimizerApp/releases/download/v1.0/MealOptimizer.apk" class="nav-cta">📥 Download</a>
+  <a href="MealOptimizer.apk" download="MealOptimizer.apk" class="nav-cta">📥 Download</a>
 </nav>
 
 <!-- HERO -->
@@ -447,9 +449,9 @@
   <div class="hero-text">
     <div class="hero-badge"><span></span> AI-Powered Nutrition</div>
     <h1>Eat <em>Smart.</em><br/>Live Better.</h1>
-    <p class="lead">MealOptimizer uses fuzzy logic and genetic algorithms to build the perfect meal plan around your body, goals, and food preferences — automatically.</p>
+    <p class="lead">MealOptimizer uses fuzzy logic and genetic algorithms and FP-Growth to build the perfect meal plan around your body, goals, and food preferences — automatically.</p>
     <div class="hero-actions">
-      <a href="https://github.com/najatbouba8-tech/MealOptimizerApp/releases/download/v1.0/MealOptimizer.apk" class="btn-primary">📥 Download APK</a>
+      <a href="MealOptimizer.apk" download="MealOptimizer.apk" class="btn-primary">📥 Download APK</a>
       <a href="#how" class="btn-ghost">See How It Works →</a>
     </div>
     <div style="margin-top:16px;background:rgba(242,61,51,.07);border:1px solid rgba(242,61,51,.18);border-radius:12px;padding:12px 18px;max-width:480px;display:flex;align-items:flex-start;gap:12px">
@@ -550,7 +552,7 @@
   </div>
   <div class="stat-item">
     <div class="num">AI</div>
-    <div class="desc">Genetic Algorithm Optimizer</div>
+    <div class="desc">GA + FP-Growth Powered</div>
   </div>
   <div class="stat-item">
     <div class="num">7d</div>
@@ -582,7 +584,7 @@
       <div class="step-num">02</div>
       <div class="step-icon">🌍</div>
       <h3>Pick Your Cuisines</h3>
-      <p>Choose from 15 world cuisines — Italian, Indian, Chinese, Japanese, Mediterranean, and more. MealOptimizer selects dishes that fit your taste while hitting your exact macro targets.</p>
+      <p>Choose from 15 world cuisines — Italian, Indian, Chinese, Japanese, Mediterranean, and more. Our FP-Growth algorithm mined frequent co-occurring dish patterns across our entire dataset, so meal suggestions are culturally accurate and nutritionally compatible.</p>
     </div>
     <div class="step-card reveal" style="transition-delay:.2s">
       <div class="step-num">03</div>
@@ -722,7 +724,7 @@
 <section id="tech">
   <div class="section-tag">Under the Hood</div>
   <h2 class="section-title">Science-driven,<br/>not gimmick-driven</h2>
-  <p class="section-sub">MealOptimizer is built on real nutritional science and advanced AI — not calorie guesses and generic meal templates.</p>
+  <p class="section-sub">MealOptimizer is built on real nutritional science and advanced AI — not calorie guesses and generic meal templates. FP-Growth pattern mining, Fuzzy Logic, and Genetic Algorithms work together under the hood.</p>
   <div class="tech-grid">
     <div class="tech-list">
       <div class="tech-item reveal">
@@ -751,6 +753,13 @@
         <div>
           <h4>BW-Based Macro Splits</h4>
           <p>Protein and fat targets calculated per kg of body weight — adapting automatically for standard users and athletes in Muscle Mode with separate lose/gain/maintain splits.</p>
+        </div>
+      </div>
+      <div class="tech-item reveal" style="transition-delay:.4s">
+        <div class="tech-item-icon">🔗</div>
+        <div>
+          <h4>FP-Growth Frequent Pattern Mining</h4>
+          <p>Our entire cuisine and dish dataset was built using FP-Growth association rule mining — discovering which foods, ingredients, and meal combinations naturally co-occur across 15 cuisines and 200+ dishes, powering smarter, culturally-accurate meal suggestions.</p>
         </div>
       </div>
     </div>
@@ -792,7 +801,7 @@ adjustment = <span class="fn">min</span>(
     <h2 class="section-title" style="color:white;">No WiFi? No problem.<br/>Any device? Absolutely.</h2>
     <p class="section-sub" style="color:rgba(255,255,255,.5);margin-bottom:64px;">Most nutrition apps hold your data hostage in the cloud. MealOptimizer is different — it lives entirely on your device, works anywhere, and runs on everything.</p>
 
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:28px;">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:28px;" class="offline-grid">
 
       <!-- Offline card -->
       <div style="background:rgba(255,255,255,.04);border:1px solid rgba(242,61,51,.2);border-radius:24px;padding:40px 36px;position:relative;overflow:hidden;" class="reveal">
@@ -941,7 +950,7 @@ adjustment = <span class="fn">min</span>(
 <div class="cta-section">
   <h2>Ready to eat smarter?</h2>
   <p>Join users who've taken control of their nutrition with AI-powered meal planning.</p>
-  <a href="https://github.com/najatbouba8-tech/MealOptimizerApp/releases/download/v1.0/MealOptimizer.apk" class="btn-white">📥 Download MealOptimizer APK</a>
+  <a href="MealOptimizer.apk" download="MealOptimizer.apk" class="btn-white">📥 Download MealOptimizer APK</a>
 </div>
 
 <!-- FOOTER -->
@@ -968,6 +977,7 @@ adjustment = <span class="fn">min</span>(
       <ul>
         <li><a href="#tech">Genetic Algorithm</a></li>
         <li><a href="#tech">Fuzzy Logic</a></li>
+        <li><a href="#tech">FP-Growth Mining</a></li>
         <li><a href="#tech">Nutrition Science</a></li>
         <li><a href="#tech">Muscle Mode</a></li>
       </ul>
